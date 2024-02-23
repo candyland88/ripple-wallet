@@ -257,7 +257,7 @@ walletApp.controller('walletCtrl', ['$scope', '$http', '$uibModal', '$localStora
   $scope.$storage = $localStorage.$default(DEFAULT);
 
   var remote = new Remote({
-      trusted:        false,
+      trusted:        true,
       local_signing:  true,
       local_fee:      true,
       fee_cushion:    $localStorage.fee_cushion,
@@ -322,7 +322,7 @@ walletApp.controller('walletCtrl', ['$scope', '$http', '$uibModal', '$localStora
 
   $scope.networks = ['MAIN', 'TEST'];
   $scope.network = 'MAIN';
-  $scope.state = 'offline'
+  $scope.state = 'online'
 
   $scope.tools = [ 
     {title: 'Raw Txn', templete:'templetes/tab-transaction.html'},
@@ -1845,7 +1845,7 @@ walletApp.controller('walletCtrl', ['$scope', '$http', '$uibModal', '$localStora
 
   $scope.addTrustline = function () {
     var settings = {
-      edit: false,
+      edit: true,
       no_ripple: true,
       quality_in_human: 0,
       quality_out_human: 0
